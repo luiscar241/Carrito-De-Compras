@@ -6,52 +6,66 @@
             id: 1,
             nombre: 'Anana',
             precio: 912,
-            imagen: 'anana.jpg'
+            imagen: https://www.shutterstock.com/es/image-photo/pineapple-fruit-slice-isolated-on-white-1938509416
         },
         {
             id: 2,
             nombre: 'Manzana',
             precio: 725,
-            imagen: 'manzana.jpg'
+            imagen: 'manzana,
         },
         {
             id: 3,
             nombre: 'Pera',
             precio: 489,
-            imagen: 'pera.jpg'
+            imagen: 'pera,
         },
         {
             id: 4,
             nombre: 'Banana',
             precio: 278,
-            imagen: 'banana.jpg'
+            imagen: 
         },
         {
             id: 5,
             nombre: 'Batata',
             precio: 279,
-            imagen: 'batata.jpg'
+            imagen: 'batata,
         },
         {
             id: 6,
             nombre: 'Cebolla',
             precio: 275,
-            imagen: 'cebolla.jpg'
+            imagen: 'cebolla,
         },
         {
             id: 7,
             nombre: 'Calabacin',
             precio: 250,
-            imagen: 'calabacin.jpg'
+            imagen: 'calabacin,
         },
         {
             id: 8,
             nombre: 'Fresas',
             precio: 750,
-            imagen: 'fresas.jpg'
+            imagen: 'fresas,
         }
 
-     ];
+           let Contenedor = document.getElementById ( "ContenedorbaseDeDatos" )
+
+           for (const producto of baseDeDatos) { 
+           let targetaProducto = document.createElement ("div")
+           targetaProducto.className = "producto"
+        
+           
+           targetaProducto.innerHTML =
+           <><h3>ARS {producto.nombre} </h3><p>Quedan ARS{producto.stock}</p><p>cuesta ARS {producto.precio}</p></>
+
+           Contenedor.append (targetaProducto)
+
+       }
+
+           
           let carrito = [];
           const divisa = 'ARS';
           const DOMitems = document.querySelector('#items');
