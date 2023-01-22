@@ -10,55 +10,59 @@
           // Variables
           const baseDeDatos = [
           {
-                  id: 1,
-                  nombre: 'Anana',
-                  precio: 912,
-                  imagen: 'anana.jpg'
-              },
-              {
-                  id: 2,
-                  nombre: 'Manzana',
-                  precio: 725,
-                  imagen: 'manzana.jpg'
-              },
-              {
-                  id: 3,
-                  nombre: 'Pera',
-                  precio: 489,
-                  imagen: 'pera.jpg'
-              },
-              {
-                  id: 4,
-                  nombre: 'Banana',
-                  precio: 278,
-                  imagen: 'banana.jpg'
-              },
-            
-              {
-                  id: 5,
-                  nombre: 'Batata',
-                  precio: 279,
-                  imagen: 'batata.jpg'
-              },
-              {
-                  id: 6,
-                  nombre: 'Cebolla',
-                  precio: 275,
-                  imagen: 'cebolla.jpg'
-              },
-              {
-                  id: 7,
-                  nombre: 'Calabacin',
-                  precio: 250,
-                  imagen: 'calabacin.jpg'
-              },
-              {
-                  id: 8,
-                  nombre: 'Fresas',
-                  precio: 750,
-                  imagen: 'fresas.jpg'
-              }
-
+    id: 1,
+    nombre: 'Anana',
+    precio: 912,
+    imagen: 'https://granjaus.com/wp-content/uploads/2019/02/AA113.jpg'
+},
+{
+    id: 2,
+    nombre: 'Manzana',
+    precio: 725,
+    imagen: 'https://www.lechepuleva.es/documents/13930/203222/manzana_g.jpg/28a2133e-b9be-4ded-997b-cd26e413f7af?t=1424942218000' 
+},
+{
+    id: 3,
+    nombre: 'Pera',
+    precio: 489,
+    imagen: 'https://laopinion.com/wp-content/uploads/sites/3/2015/10/pera.jpg?quality=80&strip=all&w=1196' 
+},
+{
+    id: 4,
+    nombre: 'Banana',
+    precio: 278,
+    imagen: 'https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.2.6-500GR.jpg'
+},
+{
+    id: 5,
+    nombre: 'Batata',
+    precio: 279,
+    imagen: 'https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.6.7-500GR-600x600.jpg'
+},
+{
+    id: 6,
+    nombre: 'Cebolla',
+    precio: 275,
+    imagen: 'https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.6.14-500GR-600x600.jpg'
+},
+{
+    id: 7,
+    nombre: 'Calabacin',
+    precio: 250,
+    imagen: 'https://www.hogarmania.com/archivos/201105/calabacin-xl-668x400x80xX.jpg'
+},
+{
+    id: 8,
+    nombre: 'Fresas',
+    precio: 750,
+    imagen: 'https://img.interempresas.net/fotos/1341264.jpeg'
+},
+{
+    id: 9,
+    nombre: 'Limon',
+    precio: 1150,
+    imagen: 'https://www.herbazest.com/imgs/0/1/a/851921/limon.jpg'    
+}
           ];
 
           let carrito = [];
@@ -77,7 +81,7 @@
               baseDeDatos.forEach((info) => {
                   // Estructura
                   const miNodo = document.createElement('div');
-                  miNodo.classList.add('card', 'col-sm-8');
+                  miNodo.classList.add('card', 'col-sm-4');
                   // Body
                   const miNodoCardBody = document.createElement('div');
                   miNodoCardBody.classList.add('card-body');
@@ -206,11 +210,9 @@
           renderizarCarrito();
         });
     </script>
-
-    
 </head>
 <body>
-    <h1>Los Cobos Venta de Frutas y Hortalizas</h1>
+    <h1>Torres Frutas y Hortalizas</h1>
     <div class="container">
         <div class="row">
             <!-- Elementos generados a partir del JSON -->
@@ -219,10 +221,10 @@
             <aside class="col-sm-4">
                 <h2>Carrito</h2>
                 <!-- Elementos del carrito -->
-                <ul id="carrito" class="-listgroup"></ul>
+                <ul id="carrito" class="list-group"></ul>
                 <hr>
                 <!-- Precio total -->
-                <p class="text-right">Total: <span id="total"></span>Pesos;</p>
+                <p class="text-right">Total: <span id="total"></span>pesos;</p>
                 <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
             </aside>
         </div>

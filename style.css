@@ -1,9 +1,16 @@
-.contenedor {
+.contenedor { 
     border: 2px solid green;
 }
 
-.Producto {
+.producto {
     width: 300px;
     height:200px;
-    border: 2px solid green;
+    border:2px solid green;
+    margin-bottom: spx;
 }
+
+.producto img {
+    width: 100px;
+    height: 100px;
+}
+
