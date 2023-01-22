@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -17,9 +18,9 @@
 },
 {
     id: 2,
-    nombre: 'Manzana',
+    nombre: 'Manzana Verde',
     precio: 725,
-    imagen: 'https://www.lechepuleva.es/documents/13930/203222/manzana_g.jpg/28a2133e-b9be-4ded-997b-cd26e413f7af?t=1424942218000' 
+    imagen: 'https://frutasolivar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/09/main-img-manzana.jpg.webp' 
 },
 {
     id: 3,
@@ -66,7 +67,7 @@
           ];
 
           let carrito = [];
-          const divisa = 'ARS';
+          const divisa = '$/Kg';
           const DOMitems = document.querySelector('#items');
           const DOMcarrito = document.querySelector('#carrito');
           const DOMtotal = document.querySelector('#total');
@@ -96,7 +97,7 @@
                   // Precio
                   const miNodoPrecio = document.createElement('p');
                   miNodoPrecio.classList.add('card-text');
-                  miNodoPrecio.textContent = `${info.precio}${divisa}`;
+                  miNodoPrecio.textContent = `${info.precio} ${divisa}`;
                   // Boton 
                   const miNodoBoton = document.createElement('button');
                   miNodoBoton.classList.add('btn', 'btn-primary');

@@ -1,5 +1,10 @@
-.contenedor { 
+ #container {
+    display: flex;
+ }
+
+.container { 
     border: 2px solid green;
+    
 }
 
 .producto {

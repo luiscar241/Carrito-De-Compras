@@ -9,9 +9,9 @@ const baseDeDatos = [
     },
     {
         id: 2,
-        nombre: 'Manzana',
+        nombre: 'Manzana Verde',
         precio: 725,
-        imagen: 'https://www.lechepuleva.es/documents/13930/203222/manzana_g.jpg/28a2133e-b9be-4ded-997b-cd26e413f7af?t=1424942218000' 
+        imagen: 'https://frutasolivar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/09/main-img-manzana.jpg.webp' 
     },
     {
         id: 3,
@@ -58,7 +58,7 @@ const baseDeDatos = [
 ];
 
 let carrito = [];
-const divisa = 'ARS';
+const divisa = '$/Kg';
 const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
