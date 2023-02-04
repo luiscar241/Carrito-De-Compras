@@ -1,5 +1,5 @@
- // Variables
-const baseDeDatos = [
+ /*// Variables
+ const baseDeDatos = [
 
     {
         id: 1,
@@ -55,9 +55,15 @@ const baseDeDatos = [
         precio: 1150,
         imagen: 'https://www.herbazest.com/imgs/0/1/a/851921/limon.jpg' 
     }
-];
+]; */
 
-let carrito = [];
+fetch("/.baseDeDatos.JSON")
+.then(response => response.json())
+.then(baseDeDatos => miPrograma(baseDeDatos))
+
+    function miPrograma(baseDeDatos) {
+
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 const divisa = '$/Kg';
 const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
@@ -91,10 +97,22 @@ function renderizarProductos() {
         miNodoPrecio.textContent = `${info.precio}${divisa}`;
         // Boton 
         const miNodoBoton = document.createElement('button');
-        miNodoBoton.classList.add('btn', 'btn-primary');
-        miNodoBoton.textContent = '+';
+    
+    confirmBottonText: "Gracias",  miNodoBoton.classList.add('btn', 'btn-primary');
+        miNodoBoton.textContent = '+','-';
         miNodoBoton.setAttribute('marcador', info.id);
         miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+       
+        Swal.fire ({
+            title: "Bienvenido Gracias Por Elegirnos",
+    text: "Inicie su Compra",
+    imageUrl: "https://revertia.com/wp-content/uploads/2014/01/1339221557612-10026808-icono-de-carrito-de-compras.jpg",
+            imageWidth: 200,
+            imageHeight: 200,
+    icon: "Continuar",
+    confirmBottonText: "Gracias",
+    timer: 8000
+})
         // Insertamos
         miNodoCardBody.appendChild(miNodoImagen);
         miNodoCardBody.appendChild(miNodoTitle);
@@ -113,6 +131,7 @@ function anyadirProductoAlCarrito(evento) {
     carrito.push(evento.target.getAttribute('marcador'))
     // Actualizamos el carrito 
     renderizarCarrito();
+    saveLocal();
 
 }
 
@@ -131,7 +150,7 @@ function renderizarCarrito() {
             // ¿Coincide las id? Solo puede existir un caso
             return itemBaseDatos.id === parseInt(item);
         });
-        // Cuenta el número de veces que se repite el producto
+        // Cuenta el número de veces que se repite el productoext
         const numeroUnidadesItem = carrito.reduce((total, itemId) => {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
@@ -147,6 +166,7 @@ function renderizarCarrito() {
         miBoton.style.marginLeft = '1rem';
         miBoton.dataset.item = item;
         miBoton.addEventListener('click', borrarItemCarrito);
+        
         // Mezclamos nodos
         miNodo.appendChild(miBoton);
         DOMcarrito.appendChild(miNodo);
@@ -167,7 +187,9 @@ function borrarItemCarrito(evento) {
     });
     // volvemos a renderizar
     renderizarCarrito();
+    saveLocal();
 }
+
 
 /**
  * Calcula el precio total teniendo en cuenta los productos repetidos
@@ -200,3 +222,14 @@ DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 // Inicio
 renderizarProductos();
 renderizarCarrito();
+
+//set item
+const saveLocal = () => {
+localStorage.setItem('carrito', JSON.stringify(carrito));
+};
+
+//get item 
+
+JSON.parse(localStorage.getItem('carrito'))
+
+}

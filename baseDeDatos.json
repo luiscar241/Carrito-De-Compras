@@ -1,0 +1,56 @@
+ [
+    {
+        "id": 1,
+        "nombre": "Anana",
+        "precio": 912,
+        "imagen": "https://granjaus.com/wp-content/uploads/2019/02/AA113.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Manzana Verde",
+        "precio": 725,
+        "imagen": "https://frutasolivar.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/09/main-img-manzana.jpg.webp"
+    },
+    {
+        "id": 3,
+        "nombre": "Pera",
+        "precio": 489,
+        "imagen": "https://laopinion.com/wp-content/uploads/sites/3/2015/10/pera.jpg?quality=80&strip=all&w=1196" 
+    },
+    {
+        "id": 4,
+        "nombre": "Banana",
+        "precio": 278,
+        "imagen": "https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.2.6-500GR.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Batata",
+        "precio": 279,
+        "imagen": "https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.6.7-500GR-600x600.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Cebolla",
+        "precio": 275,
+        "imagen": "https://greenshop.ar/wp-content/uploads/sites/9/2016/08/A.6.14-500GR-600x600.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Calabacin",
+        "precio": 250,
+        "imagen": "https://www.hogarmania.com/archivos/201105/calabacin-xl-668x400x80xX.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Fresas",
+        "precio": 750,
+        "imagen": "https://img.interempresas.net/fotos/1341264.jpeg"
+    },
+    {
+        "id": 9,
+        "nombre": "Limon",
+        "precio": 1150,
+        "imagen": "https://www.herbazest.com/imgs/0/1/a/851921/limon.jpg"
+    }
+]

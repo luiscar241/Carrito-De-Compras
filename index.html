@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script>
         document.addEventListener('DOMContentLoaded', () => {
           // Variables
           const baseDeDatos = [
@@ -66,7 +67,8 @@
 }
           ];
 
-          let carrito = [];
+
+          let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
           const divisa = '$/Kg';
           const DOMitems = document.querySelector('#items');
           const DOMcarrito = document.querySelector('#carrito');
@@ -101,9 +103,22 @@
                   // Boton 
                   const miNodoBoton = document.createElement('button');
                   miNodoBoton.classList.add('btn', 'btn-primary');
-                  miNodoBoton.textContent = '+';
+                  miNodoBoton.textContent = '+','-';
                   miNodoBoton.setAttribute('marcador', info.id);
                   miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+              
+                  
+                  Swal.fire ({
+                    title: "Bienvenido Gracias Por Elegirnos",
+            text: "Inicie su Compra",
+            imageUrl: "https://revertia.com/wp-content/uploads/2014/01/1339221557612-10026808-icono-de-carrito-de-compras.jpg",
+            imageWidth: 200,
+            imageHeight: 200,
+            icon: "Continuar",
+            confirmBottonText: "Gracias",
+            timer: 8000
+            
+        })
                   // Insertamos
                   miNodoCardBody.appendChild(miNodoImagen);
                   miNodoCardBody.appendChild(miNodoTitle);
@@ -122,6 +137,8 @@
               carrito.push(evento.target.getAttribute('marcador'))
               // Actualizamos el carrito 
               renderizarCarrito();
+              saveLocal();
+
 
           }
 
@@ -176,8 +193,12 @@
               });
               // volvemos a renderizar
               renderizarCarrito();
+              saveLocal();
           }
+          
+    
 
+        
           /**
            * Calcula el precio total teniendo en cuenta los productos repetidos
            */
@@ -209,7 +230,15 @@
           // Inicio
           renderizarProductos();
           renderizarCarrito();
+
+          //set item
+        const saveLocal = () => {
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+         };
+         //get item 
+         JSON.parse(localStorage.getItem('carrito'))
         });
+
     </script>
 </head>
 <body>
@@ -225,7 +254,7 @@
                 <ul id="carrito" class="list-group"></ul>
                 <hr>
                 <!-- Precio total -->
-                <p class="text-right">Total: <span id="total"></span>pesos;</p>
+                <p class="text-right">Total: <span id="total"></span>$;</p>
                 <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
             </aside>
         </div>
