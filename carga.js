@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-   /* // Variables
+    // Variables
     const baseDeDatos = [
         {
             id: 1,
@@ -56,10 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
             imagen: 'https://www.herbazest.com/imgs/0/1/a/851921/limon.jpg'
         }
     ];
-*/
-    fetch("./baseDeDatos.JSON")
-    .then(Response => Response.JSON())
-    .then(baseDeDatos => {
 
 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -70,6 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMbotonVaciar = document.querySelector('#boton-vaciar');
 
     // Funciones
+
+    /**
+    * Dibuja todos los productos a partir de la base de datos. No confundir con el carrito
+    */
     function renderizarProductos() {
         baseDeDatos.forEach((info) => {
             // Estructura
@@ -227,6 +227,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     //get item 
     JSON.parse(localStorage.getItem('carrito'))
-   });
-
-}
+});
