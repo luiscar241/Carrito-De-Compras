@@ -1,4 +1,5 @@
- /*// Variables
+document.addEventListener('DOMContentLoaded', () => {
+ // Variables
  const baseDeDatos = [
 
     {
@@ -55,7 +56,7 @@
         precio: 1150,
         imagen: 'https://www.herbazest.com/imgs/0/1/a/851921/limon.jpg' 
     }
-]; */
+]; 
 
 fetch("/.baseDeDatos.JSON")
 .then(response => response.json())
